@@ -1,2 +1,3 @@
-# myMarshal
-My Go-Marshal implementation
+# github.com/chenguofan1999/marshal
+
+A smallest Go-Marshal implementation
