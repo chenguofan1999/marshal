@@ -35,7 +35,7 @@ func JsonMarshal(v interface{}) ([]byte, error) {
 
 		s += `":`
 
-		s += Parse(valField)
+		s += parse(valField)
 
 		if i != num-1 {
 			s += ","

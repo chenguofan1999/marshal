@@ -21,26 +21,25 @@ func TestParse(t *testing.T) {
 			{5, 6, 7, 8},
 		},
 		[][]string{
-			{"Alice","Bob","Carol"},
-			{"Donald","Emily","Franklin"},
-			{"George","Helen","Ivan"},
+			{"Alice", "Bob", "Carol"},
+			{"Donald", "Emily", "Franklin"},
+			{"George", "Helen", "Ivan"},
 		},
-		
 	}
 
 	for _, testCase := range testCases {
 		// from encoding/json.Marshal
 		b, err := json.Marshal(testCase)
-		if err != nil{
+		if err != nil {
 			t.Error(err)
 		}
 		expected := string(b)
 
 		// mine
 		valField := reflect.ValueOf(testCase)
-		mine := Parse(valField)
+		mine := parse(valField)
 
-		if mine != expected{
+		if mine != expected {
 			t.Error("Not right")
 		}
 	}
