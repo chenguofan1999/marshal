@@ -173,7 +173,9 @@ $ go run main.go
 
 ### 特性：支持多维数组
 
-`JsonMarshal` 支持多维数组，请看示例：
+`JsonMarshal` 支持多维数组。
+
+**示例：**
 
 ```go
 package main
