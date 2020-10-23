@@ -26,3 +26,6 @@ go get github.com/chenguofan1999/marshal
 ```sh
 go get -u github.com/chenguofan1999/marshal
 ```
+
+## 用法
+
