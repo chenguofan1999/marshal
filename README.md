@@ -18,7 +18,6 @@ Golang encoding/json.Marshal的最简实现。
 
 
 
-
 ## 安装
 
 
@@ -36,7 +35,7 @@ go get -u github.com/chenguofan1999/marshal
 
 提供 `JsonMarshal` 函数，用于将任意 struct 转换为 JSON 格式的字节流。
 
-**支持的字段数据类型：**
+**支持的结构字段数据类型：**
 
 - int
 - int8
