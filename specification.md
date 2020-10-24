@@ -3,7 +3,7 @@
 本项目的主要目标是实现 `encoding/json` 里的 `Marshal` 函数，该函数接受一个 struct，返回该 struct 的 JSON 格式的字节流。
 
 
-## func `JsonMarshal`
+## `JsonMarshal` 函数
 
 直接来看最终需要实现的 `JsonMarshal` 函数:
 
@@ -13,7 +13,6 @@ func JsonMarshal(v interface{}) ([]byte, error)
 为了能接受各种各样的 struct , 该函数接受的参数实际上是一个空接口，因为任意一个结构都实现了空接口。但同时也带来了问题 —— 非结构的变量也实现了空接口，因此也可以被传入。因此对传入参数类型的检查是必要的：
 
 ```go
-    vType := reflect.TypeOf(v)
 	vVal := reflect.ValueOf(v)
 
 	// Check if input is a struct
@@ -109,7 +108,7 @@ func JsonMarshal(v interface{}) ([]byte, error) {
 }
 ```
 
-## func `parse`
+## `parse` 函数
 
 `parse` 函数接受结构体的一个字段的反射对象 `reflect.Value`，返回其序列化后的字符串。
 
