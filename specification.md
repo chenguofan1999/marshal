@@ -225,9 +225,9 @@ ok      command-line-arguments  0.003s
 
 ## 对 `JsonMarshal` 的测试
 
-设计了多个测试函数和测例，分别对无标签普通情况、有标签情况、多维数组序列化进行了测试。其中对于无标签的测试，通过与 `encoding/json.Marshal` 函数的结果进行比对来验证；对于有标签的测试，由于我的标签格式与之不同，则自己写了预期结果与测试结果进行比对。
+设计了多个测试函数和测例，分别对无标签普通情况、有标签情况、各种类型数据、多维数组数据的序列化进行了测试。其中对于无标签的测试，通过与 `encoding/json.Marshal` 函数的结果进行比对来验证；对于有标签的测试，由于我的标签格式与之不同，则自己写了预期结果与测试结果进行比对。
 
-**无标签普通情况**
+**对无标签普通情况的测试**
 ```go
 func TestWithoutTags(t *testing.T) {
 	type ColorGroup struct {
@@ -264,7 +264,7 @@ func TestWithoutTags(t *testing.T) {
 }
 ```
 
-**有字段标签**
+**对有字段标签的测试**
 ```go
 func TestWithTags(t *testing.T) {
 	type ColorGroup struct {
@@ -295,7 +295,7 @@ func TestWithTags(t *testing.T) {
 
 ```
 
-**更多数据的测试**
+**对各种类型数据的测试**
 ```go
 func TestAllTypes(t *testing.T) {
 	type TestGroup struct {
@@ -351,7 +351,7 @@ func TestAllTypes(t *testing.T) {
 
 ```
 
-**对多维数组字段的测试**
+**对更多数据的测试**
 ```go
 func TestMoreData(t *testing.T) {
 	type FruitBasket struct {
@@ -405,6 +405,11 @@ func TestMoreData(t *testing.T) {
 	}
 }
 
+```
+
+**对多维数组字段的测试**
+
+```go
 func TestMultidimensionalSlice(t *testing.T) {
 	type TestStruct struct {
 		Ints    [][]int
